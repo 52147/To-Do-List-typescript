@@ -8,7 +8,7 @@
     "dev": "cross-env NODE_ENV=dev nodemon app.ts",
     "build": "tsc",
     "format": "eslint . --fix",
-    "test": "mocha"
+    "test": "mocha test/test.ts"
   },
   "keywords": [],
   "author": "",
