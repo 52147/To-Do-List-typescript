@@ -247,11 +247,6 @@ app.get("/about", function (req, res) {
     res.render("about")
 })
 
-// list on local host 3000(website) for connection
-app.listen(process.env.PORT || 3000, function () {
-    console.log("Server started on port 3000")
-})
-
 /* Display Port to assure all services are on. */
 app.listen(port, () => {
     console.log(`Server is running on port ${port}.`)
