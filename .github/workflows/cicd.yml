@@ -10,6 +10,7 @@ on:
 
 jobs:
  # job
+ # test mocha
  test:
    runs-on: "ubuntu-latest"
    steps:
@@ -25,3 +26,19 @@ jobs:
           npm install -g mocha
           npm install
           npm run test
+## test eslint
+ lint:
+   runs-on: "ubuntu-latest"
+   steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '16'
+          check-latest: true
+      - name: Install & Test
+        run: |
+          npm install -g eslint
+          npm install
+          npm run lint
