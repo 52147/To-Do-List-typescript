@@ -1,6 +1,5 @@
 # ToDo-List-Website
 
-https://real-puce-monkey-shoe.cyclic.app
 
 Build a dynamic data response To-Do-List website implemented by EJS and connected to backend database MongoDB to operate get, post, delete request from front-end localhost:3000 by using Node.js, Express.
 
