@@ -23,9 +23,9 @@ import { initUncaughtException, initUnhandledRejection } from "./utils/process"
 import { appError, errorHandlerMainProcess } from "./utils/mixinTools"
 initUncaughtException()
 initUnhandledRejection()
-app.use((req: Request, res: Response, next: NextFunction) => {
-    next(appError(404, "40401", "No Routes"))
-})
+// app.use((req: Request, res: Response, next: NextFunction) => {
+//     next(appError(404, "40401", "No Routes"))
+// })
 app.use(errorHandlerMainProcess)
 
 //利用 jshint 來檢查代碼錯誤
@@ -46,6 +46,7 @@ import { render } from "ejs"
 mongoose.connect(
     "mongodb+srv://123:123@cluster0.qc3xle7.mongodb.net/todolistDB"
 )
+// mongoose.set("strictQuery", true)
 
 // mongodb schema : schema map with mongo db collection
 const itemSchema = new Schema({
@@ -247,7 +248,8 @@ app.get("/about", function (req, res) {
     res.render("about")
 })
 
-/* Display Port to assure all services are on. */
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}.`)
+app.listen(process.env.PORT || 8000, function () {
+
+    console.log("Server started on port 8000")
+
 })

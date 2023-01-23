@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production && npm run build && node dist/index.js",
     "dev": "cross-env NODE_ENV=dev nodemon index.ts",
-    "build": "./node_modules/typescript/bin/tsc",
+    "build": "tsc",
     "format": "eslint . --fix",
     "test": "mocha test/test.ts",
     "lint": "eslint ."
